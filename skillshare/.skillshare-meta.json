@@ -1,8 +1,8 @@
 {
   "source": "github.com/runkids/skillshare/skills/skillshare",
   "type": "github-subdir",
-  "installed_at": "2026-02-19T14:27:09.81402-03:00",
+  "installed_at": "2026-02-21T16:59:16.614957-03:00",
   "repo_url": "https://github.com/runkids/skillshare.git",
   "subdir": "skills/skillshare",
-  "version": "82fc7e8"
+  "version": "0299531"
 }
