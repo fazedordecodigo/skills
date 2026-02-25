@@ -1,0 +1,15 @@
+{
+  "source": "github.com/mamba-mental/agent-skill-manager/skills/serena-mcp-agent-skill",
+  "type": "github-subdir",
+  "installed_at": "2026-02-25T10:23:52.762823-03:00",
+  "repo_url": "https://github.com/mamba-mental/agent-skill-manager.git",
+  "subdir": "skills/serena-mcp-agent-skill",
+  "version": "5494c48",
+  "file_hashes": {
+    "SKILL.md": "sha256:d5cb10c21eab8ba6cb1056d8b7a9fd6a74b1f9844bac024d47a1f4403a7d6e5e",
+    "references/client-setup.md": "sha256:62b6cd830f143f596eafb0cfac8bd295075e2e3df1079740f68b62a6859f548e",
+    "references/contexts-and-modes.md": "sha256:09baa34c8d7cc0cd0d74c7df3effb7304e1f33b51c1bfd9cf3e9d30025173eaa",
+    "references/debugging-framework.md": "sha256:127125c8bf22c5d4dce6ad1589c09595204a28f58d88d3c5f70af80d3d66b425",
+    "references/tools-reference.md": "sha256:963e5d49803def936738ca0dbd62bc00f72f279daf7621130c98d1a70c3400c6"
+  }
+}
