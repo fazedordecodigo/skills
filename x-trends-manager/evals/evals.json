@@ -1,0 +1,101 @@
+{
+  "skill_name": "x-trends-manager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Quero ver o que está em alta no X agora no Brasil. Me mostra as principais trends e sugere um tweet que eu possa publicar sobre a mais relevante para um perfil de tecnologia/IA.",
+      "expected_output": "O assistente deve: (1) mostrar como usar get_trends.py ou analyze_trends.py com WOEID do Brasil (23424762), (2) apresentar as trends de forma organizada, (3) identificar qual é mais relevante para tech/IA, (4) compor um tweet sobre essa trend com hashtags relevantes, (5) pedir confirmação antes de qualquer posting.",
+      "assertions": [
+        {
+          "id": "mentions_woeid_brasil",
+          "description": "Menciona o WOEID correto do Brasil (23424762) ou referencia o script get_trends.py",
+          "type": "contains_any",
+          "values": ["23424762", "get_trends.py", "analyze_trends.py"]
+        },
+        {
+          "id": "suggests_tweet",
+          "description": "Cria ou sugere um rascunho de tweet",
+          "type": "contains_any",
+          "values": ["tweet", "rascunho", "publicar", "postar", "texto"]
+        },
+        {
+          "id": "asks_confirmation_before_post",
+          "description": "Pede confirmação do usuário antes de publicar",
+          "type": "contains_any",
+          "values": ["confirmar", "confirmação", "aprovação", "aprovar", "antes de publicar", "deseja publicar", "posso publicar"]
+        },
+        {
+          "id": "mentions_hashtag",
+          "description": "Inclui hashtags na sugestão de tweet",
+          "type": "contains_any",
+          "values": ["#", "hashtag"]
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Me ajuda a postar esse tweet: 'Inteligência Artificial está transformando como escrevemos código em 2025. Qual ferramenta de IA você usa no seu workflow? 🤖 #IA #DevBR #Python'. Mas verifica se está tudo certo antes.",
+      "expected_output": "O assistente deve: (1) verificar se o tweet tem menos de 280 chars, (2) apontar que --dry-run pode ser usado para testar, (3) verificar se credenciais X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_TOKEN_SECRET estão disponíveis, (4) mostrar o comando post_tweet.py com o texto exato, (5) pedir confirmação explícita do usuário antes de executar.",
+      "assertions": [
+        {
+          "id": "checks_char_count",
+          "description": "Verifica ou menciona o limite de 280 caracteres",
+          "type": "contains_any",
+          "values": ["280", "caracteres", "chars", "tamanho", "comprimento"]
+        },
+        {
+          "id": "mentions_credentials",
+          "description": "Menciona necessidade de credenciais OAuth para posting",
+          "type": "contains_any",
+          "values": ["X_API_KEY", "X_ACCESS_TOKEN", "OAuth", "credenciais", "autenticação"]
+        },
+        {
+          "id": "references_post_script",
+          "description": "Referencia o script post_tweet.py",
+          "type": "contains_any",
+          "values": ["post_tweet.py", "post_tweet", "--text"]
+        },
+        {
+          "id": "requires_explicit_confirmation",
+          "description": "Exige confirmação explícita antes de publicar",
+          "type": "contains_any",
+          "values": ["confirme", "confirmar", "confirma", "sim", "aprovação", "antes de publicar", "publicar o tweet"]
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Quero criar uma estratégia de conteúdo para o X baseada nas trends de hoje em São Paulo. Analisa as top 5 trends, me diz em quais categorias elas se encaixam e propõe 3 tweets diferentes (um mais informativo, um de engajamento com pergunta, e um com humor) sobre a trend mais relevante.",
+      "expected_output": "O assistente deve: (1) usar WOEID de São Paulo (455827), (2) executar analyze_trends.py, (3) apresentar as 5 trends com categorias, (4) escolher a mais relevante com justificativa, (5) criar 3 tweets com estilos diferentes: informativo, pergunta de engajamento, e humorístico, (6) cada tweet deve ter ≤280 chars e hashtags adequadas.",
+      "assertions": [
+        {
+          "id": "uses_sao_paulo_woeid",
+          "description": "Usa WOEID de São Paulo (455827) ou menciona São Paulo",
+          "type": "contains_any",
+          "values": ["455827", "São Paulo", "são paulo"]
+        },
+        {
+          "id": "creates_three_tweets",
+          "description": "Cria três variações de tweet com estilos diferentes",
+          "type": "contains_any",
+          "values": ["informativo", "informação", "pergunta", "engajamento", "humor", "3 tweet", "três tweet"]
+        },
+        {
+          "id": "categorizes_trends",
+          "description": "Categoriza as trends (esportes, tech, política, etc.)",
+          "type": "contains_any",
+          "values": ["categoria", "tecnologia", "esporte", "política", "entretenimento", "humor", "Esportes", "Tecnologia"]
+        },
+        {
+          "id": "includes_hashtags_in_tweets",
+          "description": "Inclui hashtags nos tweets sugeridos",
+          "type": "contains",
+          "value": "#"
+        }
+      ],
+      "files": []
+    }
+  ]
+}
